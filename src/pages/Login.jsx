@@ -11,7 +11,7 @@ const Login = () => {
     const onSubmit = data => {
         signInUser(data.email, data.password)
             .then(res => {
-                console.error(res);
+                //console.error(res);
                 Swal.fire({
                     icon: "success",
                     title: "Success",
@@ -20,7 +20,7 @@ const Login = () => {
                 navigate("/");
             })
             .catch(errors => {
-                console.error(errors);
+                //console.error(errors);
                 Swal.fire({
                     icon: "error",
                     title: "Error",
