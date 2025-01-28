@@ -1,5 +1,6 @@
 import React from 'react';
 import ContainerX from './ContainerX';
+import { FaFacebook, FaLinkedin, FaTelegram, FaTwitter } from 'react-icons/fa6';
 const Footer = () => {
     return (
         <div className='border-0 border-t-[1px] border-gray-300'>
@@ -40,6 +41,19 @@ const Footer = () => {
                     </fieldset>
                 </form>
             </ContainerX>
+            <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+                <ContainerX className={'flex flex-col md:flex-row justify-between w-full'}>
+                    <aside>
+                        <p>Copyright © {new Date().getFullYear()} - All right reserved by Career Hub</p>
+                    </aside>
+                    <aside className='flex gap-2'>
+                        <FaFacebook className='text-2xl cursor-pointer transition-all duration-300 hover:text-accent'/>
+                        <FaTwitter className='text-2xl cursor-pointer transition-all duration-300 hover:text-accent'/>
+                        <FaLinkedin className='text-2xl cursor-pointer transition-all duration-300 hover:text-accent'/>
+                        <FaTelegram className='text-2xl cursor-pointer transition-all duration-300 hover:text-accent'/>
+                    </aside>
+                </ContainerX>
+            </footer>
         </div>
     );
 };
