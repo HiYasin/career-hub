@@ -1,15 +1,16 @@
 import { Menu } from 'lucide-react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import ThemeController from './ThemeController';
 import useAuth from '../../customHooks/useAuth';
-
+import './Navbar.css';
 const Navbar = () => {
     const { user, signOutUser } = useAuth();
     const navItems = <>
-        <li><a>Home</a></li>
-        <li><a>My Profile</a></li>
+        <li><NavLink to={'/'}>Home</NavLink></li>
+        <li><NavLink to={'/login'}>Profile</NavLink></li>
         <li><a>About</a></li>
+
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -36,14 +37,15 @@ const Navbar = () => {
                     user ?
                         <div className='flex gap-2'>
                             <button className='btn btn-warning' onClick={signOutUser}>Logout</button>
-                            <div className="avatar">
+                            
+                            <div className="avatar cursor-pointer" title={user.displayName}>
                                 <div className="ring-primary ring-offset-base-100 w-10 rounded-full ring ring-offset-2">
-                                    <img src={user.photoURL} alt='user.displayName'/>
+                                    <img src={user.photoURL} alt={user.displayName}/>
                                 </div>
                             </div>
                         </div>
                         :
-                        <Link to={'/login'} className="btn btn-warning">Get Started</Link>
+                        <Link to={'/login'} className="btn btn-warning">Login</Link>
                 }
             </div>
         </div>

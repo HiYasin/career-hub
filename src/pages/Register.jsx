@@ -1,5 +1,5 @@
 
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import SocialLogin from "../components/shared/SocialLogin";
 import { useForm } from "react-hook-form";
 import useAuth from "../customHooks/useAuth";
@@ -7,10 +7,11 @@ import Swal from "sweetalert2";
 const Register = () => {
     const { createUser, updateInfo } = useAuth();
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate();
     const onSubmit = data => {
         createUser(data.email, data.password)
         .then(res => {
-            console.log(res);
+            //console.log(res);
             updateInfo(data.name, data.photoURL)
             .then(res => {
                 Swal.fire({
@@ -18,9 +19,10 @@ const Register = () => {
                     title: "Success",
                     text: "Register & Login Success!",
                 });
+                navigate("/");
             })
             .catch(errors => {
-                console.error(errors);
+                //console.error(errors);
                 Swal.fire({
                     icon: "warning",
                     title: "Warning",
@@ -29,7 +31,7 @@ const Register = () => {
             })
         })
         .catch(errors => {
-            console.error(errors);
+            //console.error(errors);
             Swal.fire({
                 icon: "error",
                 title: "Error",
