@@ -8,7 +8,7 @@ const ServiceCard = ({ service }) => {
                 <img
                     src={image}
                     alt={serviceName}
-                    class="rounded-xl" />
+                    className="rounded-xl" />
             </figure>
             <div className="card-body items-start text-center">
                 <h2 className="text-lg font-bold px-2 py-1 bg-warning rounded-full w-full text-center">{serviceName}</h2>
