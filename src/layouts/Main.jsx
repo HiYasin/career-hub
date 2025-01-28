@@ -12,7 +12,9 @@ const Main = () => {
                 </ContainerX>
             </header>
             <main className="pt-20 pb-10 px-2 bg-gray-100">
-                <Outlet></Outlet>
+                <ContainerX>
+                    <Outlet></Outlet>
+                </ContainerX>
             </main>
             <footer>
                 <Footer />
