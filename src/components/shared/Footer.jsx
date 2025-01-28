@@ -2,7 +2,7 @@ import React from 'react';
 import ContainerX from './ContainerX';
 const Footer = () => {
     return (
-        <div className='bg-base-200'>
+        <div className='border-0 border-t-[1px] border-gray-300'>
             <ContainerX className="grid md:grid-cols-3 gap-5 justify-center md:justify-between w-full text-base-content py-10 px-4">
                 <div className='grid text-center md:text-left sm:grid-cols-3 gap-5 col-span-2'>
                     <nav>
