@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
         Swal.fire({
             icon: "success",
             title: "Success",
-            text: "Register & Login Success!",
+            text: "Logout Success!",
         });
         return signOut(auth);
     };

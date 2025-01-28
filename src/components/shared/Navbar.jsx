@@ -8,8 +8,8 @@ const Navbar = () => {
     const { user, signOutUser } = useAuth();
     const navItems = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/login'}>Profile</NavLink></li>
-        <li><a>About</a></li>
+        <li><NavLink to={'/profile'}>Profile</NavLink></li>
+        <li><NavLink to={'/about'}>About</NavLink></li>
 
     </>
     return (

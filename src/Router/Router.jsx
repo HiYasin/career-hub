@@ -3,11 +3,13 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Error from "../pages/Error";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -23,6 +25,10 @@ const Router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: "*",
+    element: <Error></Error>
+  }
 ]);
 
 export default Router;
