@@ -31,11 +31,11 @@ const Footer = () => {
                     <h6 className="footer-title">Newsletter</h6>
                     <fieldset>
                         <div>Enter your email address</div>
-                        <div className="join">
+                        <div className="join mt-4">
                             <input
                                 type="text"
                                 placeholder="username@site.com"
-                                class="input input-bordered join-item" />
+                                class="input input-bordered join-item focus:outline-0" />
                             <button className="btn btn-primary join-item">Subscribe</button>
                         </div>
                     </fieldset>
