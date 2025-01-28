@@ -6,12 +6,12 @@ import Footer from "../components/shared/Footer";
 const Main = () => {
     return (
         <>
-            <header>
+            <header className="px-2 fixed z-50 left-0 top-1 right-0">
                 <ContainerX>
                     <Navbar />
                 </ContainerX>
             </header>
-            <main>
+            <main className="mt-20 mb-10 mx-2">
                 <Outlet></Outlet>
             </main>
             <footer>

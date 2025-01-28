@@ -5,10 +5,10 @@ const Register = () => {
     return (
         <div>
             <div className="w-full h-full flex justify-center items-center">
-                <div className="card bg-base-100 w-full max-w-lg rounded-none shrink-0 shadow-2xl p-5">
-                    <h2 className="text-center text-2xl font-semibold py-10 border-b-[1px]">Register Here</h2>
-
-                    <form className="p-10 pb-5 grid gap-2">
+                <div className="card bg-base-100 w-full max-w-lg rounded-none shrink-0 shadow-md border border-gray-100 p-5">
+                    <h2 className="text-center text-2xl font-semibold py-5">Register Here</h2>
+                    <div className="divider py-0 m-0 px-10"></div>
+                    <form className="px-10 py-5 grid gap-2">
                         <div className="form-control">
                             <label className="label block">
                                 <span className="label-text">Name</span>
