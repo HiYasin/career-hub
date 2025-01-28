@@ -15,7 +15,7 @@ const Testimonial = () => {
             .then(data => setTestimonial(data));
     }, [])
     return (
-        <div className='pb-10 md:px-10'>
+        <div className='py-10 md:px-10 bg-base-100 my-10'>
             <SectionTitle>What Our Clients Say</SectionTitle>
             <Swiper
                 spaceBetween={30}

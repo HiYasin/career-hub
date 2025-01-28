@@ -1,7 +1,9 @@
+import SectionTitle from "../shared/SectionTitle";
 
 const Faq = () => {
     return (
-        <div className="mx-auto w-fit">
+        <div className="bg-base-100 flex flex-col justify-center px-10 pb-10">
+            <SectionTitle>Frequently Asked Questions</SectionTitle>
             <div className="join join-vertical bg-base-100">
                 <div className="collapse collapse-arrow join-item border-base-300 border">
                     <input type="radio" name="my-accordion-4" defaultChecked />

@@ -3,7 +3,7 @@
 const ServiceCard = ({ service }) => {
     const { image, serviceName, category, pricing, counselor } = service;
     return (
-        <div className="card bg-base-100 shadow-sm">
+        <div className="card bg-base-100 rounded-none shadow-sm">
             <figure className="px-10 pt-10">
                 <img
                     src={image}

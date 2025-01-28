@@ -1,12 +1,12 @@
 import banner from '../../assets/banner.jpg'
 const Banner = () => {
     return (
-        <div className='grid md:grid-cols-2 gap-10 justify-between items-center py-5'>
+        <div className='grid md:grid-cols-2 gap-10 justify-between items-center py-5 bg-base-100 px-4'>
             <div className='grid gap-4'>
-                <h1 className='text-2xl md:text-5xl text-gray-900 font-bold text-balance text-center md:text-left'>
+                <h1 className='text-2xl md:text-5xl text-warning font-bold text-balance text-center md:text-left'>
                 Empowering Your Journey to Professional Success
                 </h1>
-                <h2 className='text-md md:text-lg lg:text-xl text-gray-900 text-balance text-center md:text-left'>
+                <h2 className='text-md md:text-lg lg:text-xl text-neautral text-balance text-center md:text-left'>
                 Unlock your potential with personalized career advice, guidance, and resources tailored to help you make informed decisions for a brighter professional future.
                 </h2>
             </div>

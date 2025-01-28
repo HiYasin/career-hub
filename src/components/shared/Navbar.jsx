@@ -22,7 +22,7 @@ const Navbar = () => {
                             {navItems}
                     </ul>
                 </div>
-                <Link to={'/'} className="text-xl">Career Hub</Link>
+                <Link to={'/'} className="text-xl text-warning uppercase font-bold">Career Hub</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -31,7 +31,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end space-x-2">
                 <ThemeController />
-                <Link to={'/login'} className="btn">Get Started</Link>
+                <Link to={'/login'} className="btn btn-warning">Get Started</Link>
             </div>
         </div>
     );
