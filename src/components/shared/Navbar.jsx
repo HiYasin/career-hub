@@ -31,7 +31,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end space-x-2">
                 <ThemeController />
-                <a className="btn">Get Started</a>
+                <Link to={'/login'} className="btn">Get Started</Link>
             </div>
         </div>
     );

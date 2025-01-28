@@ -1,14 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ThemeController = () => {
-    const [ currentTheme, setCurrentTheme ] = useState(true);
+    
+    const [currentTheme, setCurrentTheme] = useState('light');
+
+    const storedTheme = localStorage.getItem('theme');
+
+    useEffect(() => {
+        if (storedTheme!=='') {
+            setCurrentTheme(storedTheme);
+        } else {
+            setCurrentTheme('light');
+            localStorage.setItem('theme', 'light');
+        }
+    }, [storedTheme]);
+
+
     const handleChange = () => {
-        setCurrentTheme(!currentTheme);
+        if (currentTheme === 'light') {
+            setCurrentTheme('night');
+            localStorage.setItem('theme', 'night');
+        } else if(currentTheme === 'night') {
+            setCurrentTheme('light');
+            localStorage.setItem('theme', 'light');
+        } else{
+            setCurrentTheme('light');
+            localStorage.setItem('theme', 'light');
+        }
     }
     return (
         <div>
             <label className="toggle text-base-content">
-                <input type="checkbox" value={currentTheme?'night':'light'} onChange={handleChange} className="theme-controller" />
+                <input type="checkbox" value={currentTheme} onChange={handleChange} className="theme-controller" />
 
                 <svg aria-label="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
                     <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor" >

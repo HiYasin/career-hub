@@ -1,6 +1,5 @@
 import React from 'react';
 import ContainerX from './ContainerX';
-
 const Footer = () => {
     return (
         <div className='bg-base-200'>
