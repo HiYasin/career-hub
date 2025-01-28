@@ -11,7 +11,7 @@ const Main = () => {
                     <Navbar />
                 </ContainerX>
             </header>
-            <main className="pt-20 pb-10 px-2 bg-gray-100">
+            <main className="pt-20 pb-10 px-2 bg-base-300">
                 <ContainerX>
                     <Outlet></Outlet>
                 </ContainerX>
