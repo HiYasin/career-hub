@@ -8,7 +8,7 @@ import { useState } from "react";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { signInUser } = useAuth();
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, getValues } = useForm();
     const navigate = useNavigate();
     const onSubmit = data => {
         signInUser(data.email, data.password)
@@ -30,6 +30,16 @@ const Login = () => {
                 });
             });
     };
+
+    const handleForgotPassword = () => {
+        const email = getValues("email");
+        if (email) {
+            navigate(`/forgot/${email}`);
+        } else {
+            navigate("/forgot");
+        }
+    };
+
     return (
         <div className="w-full h-full flex justify-center items-center">
             <div className="card bg-base-100 w-full max-w-lg rounded-none shrink-0 shadow-md border border-gray-100 p-5">
@@ -72,7 +82,7 @@ const Login = () => {
                         </div>
                         <p className="text-red-500">{errors.password?.message}</p>
                         <label className="label mt-4">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <a className="label-text-alt link link-hover" onClick={handleForgotPassword}>Forgot password?</a>
                         </label>
                     </div>
 

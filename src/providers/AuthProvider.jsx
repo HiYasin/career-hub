@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.config';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider, updateProfile, sendPasswordResetEmail } from 'firebase/auth';
 import Swal from 'sweetalert2';
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
@@ -22,6 +22,13 @@ const AuthProvider = ({ children }) => {
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
+    };
+
+
+    //forgot password
+    const forgotPassword = (email) => {
+        setLoading(true);
+        return sendPasswordResetEmail(auth, email);
     };
 
     //for login
@@ -55,6 +62,7 @@ const AuthProvider = ({ children }) => {
         setUser,
         loading,
         setLoading,
+        forgotPassword,
         googleSign,
         updateInfo,
         signInUser,

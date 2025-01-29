@@ -7,6 +7,7 @@ import Error from "../pages/Error";
 import ProtectedRoute from "./ProtectedRoute";
 import Profile from "../pages/Profile";
 import ServiceDetails from "../components/ServiceDetails";
+import ForgotPass from "../pages/ForgotPass";
 
 const Router = createBrowserRouter([
   {
@@ -34,6 +35,14 @@ const Router = createBrowserRouter([
       {
         path: '/profile',
         element: <ProtectedRoute><Profile></Profile></ProtectedRoute>
+      },
+      {
+        path: "/forgot",
+        element: <ForgotPass></ForgotPass>
+      },
+      {
+        path: "/forgot/:email",
+        element: <ForgotPass></ForgotPass>
       }
     ],
   },
