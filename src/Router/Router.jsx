@@ -8,6 +8,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import Profile from "../pages/Profile";
 import ServiceDetails from "../components/ServiceDetails";
 import ForgotPass from "../pages/ForgotPass";
+import Discounts from "../pages/Discounts";
 
 const Router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
       {
         path: '/profile',
         element: <ProtectedRoute><Profile></Profile></ProtectedRoute>
+      },
+      {
+        path: '/discounts',
+        element: <ProtectedRoute><Discounts></Discounts></ProtectedRoute>
       },
       {
         path: "/forgot",
