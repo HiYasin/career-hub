@@ -4,6 +4,9 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Error from "../pages/Error";
+import ServiceDetails from "../pages/ServiceDetails";
+import ProtectedRoute from "./ProtectedRoute";
+import Profile from "../pages/Profile";
 
 const Router = createBrowserRouter([
   {
@@ -22,6 +25,14 @@ const Router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: '/details',
+        element: <ProtectedRoute><ServiceDetails></ServiceDetails></ProtectedRoute>
+      },
+      {
+        path: '/profile',
+        element: <ProtectedRoute><Profile></Profile></ProtectedRoute>
       }
     ],
   },

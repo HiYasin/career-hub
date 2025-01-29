@@ -79,7 +79,7 @@ const Register = () => {
                                 required: "Password is required",
                                 pattern: {
                                     value: /^(?=.*[A-Z])(?=.{6,})/,
-                                    message: "Password must be at least 6 digits long, contain a capital letter and a special character"
+                                    message: "Password must be at least 6 digits long, contain a uppercase letter and a lowercase letter"
                                 }
                             })}
                              type="password" placeholder="password" className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100"  />
@@ -87,10 +87,10 @@ const Register = () => {
                         </div>
 
                         <div className="form-control mt-4">
-                            <button className="btn btn-warning rounded-none w-full">Login</button>
+                            <button className="btn btn-warning rounded-none w-full">Register</button>
                         </div>
                         <div className="py-2">
-                            <p className="text-center">Already Have An Account ? <Link to={'/login'} className="text-red-500 font-semibold hover:underline">Login</Link></p>
+                            <p className="text-center">Already Have An Account ? <Link to={'/login'} className="text-warning font-semibold hover:underline">Login</Link></p>
                         </div>
                         <div className="divider">OR</div>
                     </form>

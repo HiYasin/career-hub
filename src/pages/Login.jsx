@@ -52,7 +52,7 @@ const Login = () => {
                                 required: "Password is required",
                                 pattern: {
                                     value: /^(?=.*[A-Z])(?=.{6,})/,
-                                    message: "Password must be at least 6 digits long, contain a capital letter and a special character"
+                                    message: "Password must be at least 6 digits long, contain a uppercase letter and a lowercase letter"
                                 }
                             })}
                             type="password" placeholder="password" className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
@@ -66,7 +66,7 @@ const Login = () => {
                         <button className="btn btn-warning rounded-none w-full">Login</button>
                     </div>
                     <div className="py-2">
-                        <p className="text-center">Dont’t Have An Account ? <Link to={'/register'} className="text-red-500 font-semibold hover:underline">Register</Link></p>
+                        <p className="text-center">Dont’t Have An Account ? <Link to={'/register'} className="text-warning font-semibold hover:underline">Register</Link></p>
                     </div>
                     <div className="divider">OR</div>
                 </form>
