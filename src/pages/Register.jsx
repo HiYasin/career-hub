@@ -4,40 +4,42 @@ import SocialLogin from "../components/shared/SocialLogin";
 import { useForm } from "react-hook-form";
 import useAuth from "../customHooks/useAuth";
 import Swal from "sweetalert2";
+import { useState } from "react";
 const Register = () => {
+    const [showPassword, setShowPassword] = useState(false);
     const { createUser, updateInfo } = useAuth();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = data => {
         createUser(data.email, data.password)
-        .then(res => {
-            //console.log(res);
-            updateInfo(data.name, data.photoURL)
             .then(res => {
-                Swal.fire({
-                    icon: "success",
-                    title: "Success",
-                    text: "Register & Login Success!",
-                });
-                navigate("/");
+                //console.log(res);
+                updateInfo(data.name, data.photoURL)
+                    .then(res => {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            text: "Register & Login Success!",
+                        });
+                        navigate("/");
+                    })
+                    .catch(errors => {
+                        //console.error(errors);
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Warning",
+                            text: "Failed to upload photo but registered success.",
+                        });
+                    })
             })
             .catch(errors => {
                 //console.error(errors);
                 Swal.fire({
-                    icon: "warning",
-                    title: "Warning",
-                    text: "Failed to upload photo but registered success.",
+                    icon: "error",
+                    title: "Error",
+                    text: "Failed to register & login. Please try again.",
                 });
-            })
-        })
-        .catch(errors => {
-            //console.error(errors);
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "Failed to register & login. Please try again.",
             });
-        });
     };
     return (
         <div>
@@ -51,7 +53,7 @@ const Register = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" placeholder="Your Name" {...register("name", { required: "Name is required" })}
-                            className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
+                                className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
                             <p className="text-red-500">{errors.name?.message}</p>
                         </div>
                         <div className="form-control">
@@ -59,7 +61,7 @@ const Register = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" placeholder="Email" {...register("email", { required: "Email is required" })}
-                            className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
+                                className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
                             <p className="text-red-500">{errors.email?.message}</p>
                         </div>
                         <div className="form-control">
@@ -67,23 +69,35 @@ const Register = () => {
                                 <span className="label-text">PhotoURL</span>
                             </label>
                             <input type="text" placeholder="Photo URL" {...register("photoURL", { required: "Photo url is required" })}
-                             className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
-                             <p className="text-red-500">{errors.photoURL?.message}</p>
+                                className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
+                            <p className="text-red-500">{errors.photoURL?.message}</p>
                         </div>
                         <div className="form-control">
                             <label className="label block">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input 
-                            {...register("password", {
-                                required: "Password is required",
-                                pattern: {
-                                    value: /^(?=.*[A-Z])(?=.{6,})/,
-                                    message: "Password must be at least 6 digits long, contain a uppercase letter and a lowercase letter"
-                                }
-                            })}
-                             type="password" placeholder="password" className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100"  />
-                             <p className="text-red-500">{errors.password?.message}</p>
+                            <div className="relative">
+                                <input
+                                    {...register("password", {
+                                        required: "Password is required",
+                                        pattern: {
+                                            value: /^(?=.*[A-Z])(?=.{6,})/,
+                                            message: "Password must be at least 6 digits long, contain a uppercase letter and a lowercase letter"
+                                        }
+                                    })}
+                                    type={showPassword ? "text" : "password"}
+                                    placeholder="password"
+                                    className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100"
+                                />
+
+                                <span
+                                    className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                >
+                                    {showPassword ? "🙈" : "👁️"}
+                                </span>
+                            </div>
+                            <p className="text-red-500">{errors.password?.message}</p>
                         </div>
 
                         <div className="form-control mt-4">

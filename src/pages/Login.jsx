@@ -3,8 +3,10 @@ import SocialLogin from "../components/shared/SocialLogin";
 import { useForm } from "react-hook-form";
 import useAuth from "../customHooks/useAuth";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false);
     const { signInUser } = useAuth();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
@@ -47,15 +49,27 @@ const Login = () => {
                         <label className="label block">
                             <span className="label-text">Password</span>
                         </label>
-                        <input
-                            {...register("password", {
-                                required: "Password is required",
-                                pattern: {
-                                    value: /^(?=.*[A-Z])(?=.{6,})/,
-                                    message: "Password must be at least 6 digits long, contain a uppercase letter and a lowercase letter"
-                                }
-                            })}
-                            type="password" placeholder="password" className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100" />
+                        <div className="relative">
+                            <input
+                                {...register("password", {
+                                    required: "Password is required",
+                                    pattern: {
+                                        value: /^(?=.*[A-Z])(?=.{6,})/,
+                                        message: "Password must be at least 6 digits long, contain a uppercase letter and a lowercase letter"
+                                    }
+                                })}
+                                type={showPassword ? "text" : "password"}
+                                placeholder="password"
+                                className="placeholder:text-gray-900 input w-full rounded-none outline-none border-none bg-gray-100"
+                            />
+
+                            <span
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? "🙈" : "👁️"}
+                            </span>
+                        </div>
                         <p className="text-red-500">{errors.password?.message}</p>
                         <label className="label mt-4">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
