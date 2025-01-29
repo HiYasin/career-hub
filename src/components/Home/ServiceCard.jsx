@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const ServiceCard = ({ service }) => {
-    const { image, serviceName, category, pricing, counselor } = service;
+    const { id, image, serviceName, category, pricing, counselor } = service;
     return (
         <div className="card bg-base-100 rounded-none shadow-sm">
             <figure className="px-10 pt-10">
@@ -15,7 +16,7 @@ const ServiceCard = ({ service }) => {
                 <p>Counselor: <span className='font-bold'>{counselor}</span> </p>
                 <p>Category: <span className='font-bold'>{category}</span></p>
                 <p>Price: <span className='bg-yellow-600/30 rounded-full px-4 font-bold'>{pricing}</span></p>
-                <button className="btn btn-warning w-full">Learn More</button>
+                <Link to={`details/${id}`} className="btn btn-warning w-full">Learn More</Link>
 
             </div>
         </div>

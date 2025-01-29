@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Swal from 'sweetalert2';
+import { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 import SectionTitle from '../shared/SectionTitle';
 
@@ -9,13 +8,6 @@ const Services = () => {
         fetch('services.json')
             .then(response => response.json())
             .then(data => setServices(data))
-            .catch(error =>
-                Swal.fire({
-                    title: "Error",
-                    text: "Services Data Can't be Loaded",
-                    icon: "error"
-                })
-            )
     }, []);
     //console.log(services);
     return (

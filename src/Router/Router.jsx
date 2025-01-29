@@ -4,9 +4,9 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Error from "../pages/Error";
-import ServiceDetails from "../pages/ServiceDetails";
 import ProtectedRoute from "./ProtectedRoute";
 import Profile from "../pages/Profile";
+import ServiceDetails from "../components/ServiceDetails";
 
 const Router = createBrowserRouter([
   {
@@ -27,8 +27,9 @@ const Router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: '/details',
-        element: <ProtectedRoute><ServiceDetails></ServiceDetails></ProtectedRoute>
+        path: '/details/:id',
+        element: <ProtectedRoute><ServiceDetails></ServiceDetails></ProtectedRoute>,
+        loader: () => fetch('/services.json'),
       },
       {
         path: '/profile',
