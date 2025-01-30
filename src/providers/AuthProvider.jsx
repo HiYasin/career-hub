@@ -11,9 +11,8 @@ const AuthProvider = ({ children }) => {
 
     //google login/registration
     const provider = new GoogleAuthProvider();
-    const googleSign = (provider) => {
+    const googleSign = () => {
         return signInWithPopup(auth, provider);
-
     }
     const updateInfo = ( name, photoURL ) =>{
         return updateProfile(auth.currentUser, { displayName: name, photoURL: photoURL })
