@@ -1,28 +1,160 @@
-# README
+# 🏋️‍♂️ Fitness Hub
 
-# Career Hub
+**Fitness Hub** is an interactive platform designed to help users achieve their fitness goals through structured workout plans, expert guidance, and community support. With an intuitive interface, secure authentication, and personalized features, it provides a seamless experience for fitness enthusiasts of all levels.
 
-Career Hub is a career counseling Website provides personalized career advice and resources, empowering users to make informed professional decisions. Built with React, React Router, and Firebase, it offers seamless navigation, secure user authentication, and efficient data management. This intuitive platform ensures a user-friendly experience, guiding individuals on their career paths and helping them achieve their professional goals effectively.
+## 🌐 Live Demo
 
-# 🌐 Live Link
+[🔗 Fitness Hub Live Website](https://career-hub-5a647.web.app/)
 
-[https://career-hub-5a647.web.app/](https://career-hub-5a647.web.app/)
+---
 
+## 📜 Table of Contents
 
-# 🔑Key Features
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-1. Secure Login System with Firebase.
-2. Secure routing for private & protected pages.
-3. Protected page can only be accessed when logged in.
-4. User can access detailed information by logging.
-5. User can see his information in profile page.
+---
 
-# 📦Used Library and Packages
+## 🔑 Features
 
-- DaisyUI (For modern components)
-- Swiper (For Testimonial slider)
-- Smastrom/react-rating (For Rating in Testimonial)
-- React Router (For dynamic routing)
-- React Hook Form (To handle form in a standard way)
-- Sweet Alert (To give a smooth toast notification)
-- React icons & lucid icons
+✔️ **Secure Authentication** – Firebase-based login system for user security.  
+✔️ **Protected Routes** – Only authorized users can access certain pages.  
+✔️ **Personalized Dashboard** – Users can track workouts and progress.  
+✔️ **Workout Plans & Tips** – Curated exercise routines and fitness guidance.  
+✔️ **Community Engagement** – Users can connect and share fitness goals.  
+✔️ **Responsive UI** – Built with TailwindCSS and DaisyUI for a modern design.  
+
+---
+
+## 🛠️ Technologies Used
+
+- **React.js** – Frontend framework  
+- **Vite** – Fast development build tool  
+- **TailwindCSS** – Utility-first styling  
+- **DaisyUI** – Prebuilt TailwindCSS components  
+- **Firebase** – Authentication & database  
+- **React Router** – Dynamic routing  
+- **Swiper.js** – Smooth image carousels  
+- **SweetAlert2** – Elegant notifications  
+
+---
+
+## 🛠️ How to Run Locally  
+
+1️⃣ **Clone the Repository**  
+```sh
+git clone https://github.com/HiYasin/career-hub.git
+cd career-hub
+```
+
+2️⃣ **Install Dependencies**  
+```sh
+npm install
+```
+
+3️⃣ **Set Up environment file**  
+Here’s the `.env` configuration formatted in Markdown:
+
+# Environment Variables
+
+Create a `.env` file in the root directory and add the following variables:
+
+```env
+VITE_apiKey=your_firebase_apiKey
+VITE_authDomain=your_firebase_authDomain
+VITE_projectId=your_firebase_projectId
+VITE_storageBucket=your_firebase_storageBucket
+VITE_messagingSenderId=your_firebase_messagingSenderId
+VITE_appId=your_firebase_appId
+```
+> **Note:** Replace `your_firebase_apiKey`, `your_imageUploadKey`, etc., with your actual keys.
+
+Make sure to add `.env` to your `.gitignore` file to keep your credentials secure.
+
+4️⃣ **Run the Application**  
+```sh
+npm run dev
+```
+
+---
+
+## 📦 Dependencies
+
+The project utilizes the following libraries:
+
+**Core Dependencies:**
+```json
+{
+  "@smastrom/react-rating": "^1.5.0",
+  "@tailwindcss/vite": "^4.0.0",
+  "firebase": "^11.2.0",
+  "localforage": "^1.10.0",
+  "lucide-react": "^0.474.0",
+  "match-sorter": "^8.0.0",
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "react-helmet-async": "^2.0.5",
+  "react-hook-form": "^7.54.2",
+  "react-icons": "^5.4.0",
+  "react-rating": "^2.0.5",
+  "react-router-dom": "^7.1.3",
+  "react-tooltip": "^5.28.0",
+  "sort-by": "^1.2.0",
+  "sweetalert2": "^11.15.10",
+  "swiper": "^11.2.1",
+  "tailwindcss": "^4.0.0"
+}
+```
+
+**Development Dependencies:**
+```json
+{
+  "@eslint/js": "^9.17.0",
+  "@types/react": "^18.3.18",
+  "@types/react-dom": "^18.3.5",
+  "@vitejs/plugin-react": "^4.3.4",
+  "daisyui": "^5.0.0-beta.2",
+  "eslint": "^9.17.0",
+  "eslint-plugin-react": "^7.37.2",
+  "eslint-plugin-react-hooks": "^5.0.0",
+  "eslint-plugin-react-refresh": "^0.4.16",
+  "globals": "^15.14.0",
+  "vite": "^6.0.5"
+}
+```
+
+---
+
+## 📖 Usage
+
+- Browse fitness plans and exercise tutorials.  
+- Create an account and securely log in.  
+- Track your progress and maintain fitness logs.  
+- Engage with the community for motivation.  
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Follow these steps:
+
+1. **Fork the Repository**  
+2. **Create a Feature Branch** (`git checkout -b feature-name`)  
+3. **Commit Changes** (`git commit -m "Add feature"`)  
+4. **Push to Branch** (`git push origin feature-name`)  
+5. **Open a Pull Request**  
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+Let me know if you need further refinements! 🚀
