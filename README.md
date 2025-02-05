@@ -139,22 +139,4 @@ The project utilizes the following libraries:
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Follow these steps:
-
-1. **Fork the Repository**  
-2. **Create a Feature Branch** (`git checkout -b feature-name`)  
-3. **Commit Changes** (`git commit -m "Add feature"`)  
-4. **Push to Branch** (`git push origin feature-name`)  
-5. **Open a Pull Request**  
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
----
-
 Let me know if you need further refinements! 🚀
