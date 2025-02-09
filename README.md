@@ -1,10 +1,9 @@
-# 🏋️‍♂️ Fitness Hub
-
-**Fitness Hub** is an interactive platform designed to help users achieve their fitness goals through structured workout plans, expert guidance, and community support. With an intuitive interface, secure authentication, and personalized features, it provides a seamless experience for fitness enthusiasts of all levels.
+# Career Hub
+Career Hub is a career counseling Website provides personalized career advice and resources, empowering users to make informed professional decisions. Built with React, React Router, and Firebase, it offers seamless navigation, secure user authentication, and efficient data management. This intuitive platform ensures a user-friendly experience, guiding individuals on their career paths and helping them achieve their professional goals effectively.
 
 ## 🌐 Live Demo
 
-[🔗 Fitness Hub Live Website](https://career-hub-5a647.web.app/)
+[🔗 Career Hub Live Website](https://career-hub-5a647.web.app/)
 
 ---
 
@@ -58,11 +57,11 @@ npm install
 ```
 
 3️⃣ **Set Up environment file**  
-Here’s the `.env` configuration formatted in Markdown:
+Here’s the `.env.local` configuration formatted in Markdown:
 
 # Environment Variables
 
-Create a `.env` file in the root directory and add the following variables:
+Create a `.env.local` file in the root directory and add the following variables:
 
 ```env
 VITE_apiKey=your_firebase_apiKey
@@ -74,7 +73,7 @@ VITE_appId=your_firebase_appId
 ```
 > **Note:** Replace `your_firebase_apiKey`, `your_imageUploadKey`, etc., with your actual keys.
 
-Make sure to add `.env` to your `.gitignore` file to keep your credentials secure.
+Make sure to add `.env.local` to your `.gitignore` file to keep your credentials secure.
 
 4️⃣ **Run the Application**  
 ```sh
